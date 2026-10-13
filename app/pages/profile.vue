@@ -61,7 +61,7 @@ const saveProfile = () => {
       <UCard class="md:col-span-2">
         <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
           <div class="flex items-center gap-4 min-w-0 flex-1">
-            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-2xl flex items-center justify-center shadow-md shrink-0">
+            <div class="w-16 h-16 rounded-full bg-linear-to-br from-indigo-500 to-purple-600 text-white font-bold text-2xl flex items-center justify-center shadow-md shrink-0">
               {{ user.name.split(' ').map(n => n[0]).join('') }}
             </div>
             <div class="min-w-0 flex-1">
@@ -113,7 +113,7 @@ const saveProfile = () => {
       </UCard>
 
       <!-- Бонусная программа -->
-      <UCard class="flex flex-col justify-between bg-gradient-to-br from-indigo-50/50 to-indigo-100/50 dark:from-zinc-900 dark:to-indigo-950/30 border-indigo-200/50 dark:border-indigo-900/50">
+      <UCard class="flex flex-col justify-between bg-linear-to-br from-indigo-50/50 to-indigo-100/50 dark:from-zinc-900 dark:to-indigo-950/30 border-indigo-200/50 dark:border-indigo-900/50">
         <div>
           <div class="flex items-center gap-2 mb-2 text-primary font-semibold text-sm">
             <UIcon name="i-heroicons-sparkles" class="w-5 h-5" />
@@ -190,7 +190,7 @@ const saveProfile = () => {
 
           <div class="flex items-center gap-4">
             <UBadge :label="order.status" :color="order.statusColor" variant="subtle" size="xs" />
-            <div class="font-bold text-gray-900 dark:text-gray-100 text-right min-w-[90px]">
+            <div class="font-bold text-gray-900 dark:text-gray-100 text-right min-w-22.5">
               {{ order.total.toLocaleString('ru-RU') }} ₽
             </div>
           </div>

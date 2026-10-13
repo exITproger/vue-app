@@ -13,7 +13,7 @@ const onSearch = (q: string) => {
 
 <template>
   <div>
-    <section class="relative bg-gradient-to-br from-indigo-600 via-indigo-700 to-slate-900 text-white">
+    <section class="relative bg-linear-to-br from-indigo-600 via-indigo-700 to-slate-900 text-white">
       <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.2),transparent)] pointer-events-none" />
       <UContainer>
         <div class="relative py-24 md:py-32 max-w-3xl">
