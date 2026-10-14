@@ -119,7 +119,7 @@ const makeOrder = () => {
                 >
                   -
                 </button>
-                <span class="px-2 text-sm font-semibold min-w-[24px] text-center">
+                <span class="px-2 text-sm font-semibold min-w-6 text-center">
                   {{ item.quantity }}
                 </span>
                 <button

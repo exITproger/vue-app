@@ -147,7 +147,7 @@ const onBlur = () => {
     >
       <div
         v-if="hasDropdownContent"
-        class="absolute top-full left-0 right-0 mt-2 p-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-2xl z-[100] overflow-hidden divide-y divide-gray-100 dark:divide-gray-800"
+        class="absolute top-full left-0 right-0 mt-2 p-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-2xl z-100 overflow-hidden divide-y divide-gray-100 dark:divide-gray-800"
       >
         <!-- Подсказки по товарам -->
         <div v-if="productSuggestions.length > 0" class="pb-2">

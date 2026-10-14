@@ -9,7 +9,7 @@ const phoneHref = 'tel:88005553535'
 const phoneLabel = '8 (800) 555-35-35'
 const emailHref = 'mailto:info@sportfuel.ru'
 const emailLabel = 'info@sportfuel.ru'
-const helpCenterHref = 'https://t.me/sportfuel_help'
+const helpCenterHref= 'https://t.me/sportfuel_help'
 
 // Логотип: клик -> наверх и на главную
 const goHome = async () => {
