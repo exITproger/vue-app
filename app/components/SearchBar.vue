@@ -60,23 +60,29 @@ const pickHistory = (h: string) => {
   submit()
 }
 
-const goToProduct = (id: number) => {
-  if (query.value.trim()) {
-    addQuery(query.value.trim())
+const goToProduct = (product: Product) => {
+  addQuery(product.name)
+  if (typeof window !== 'undefined') {
+    sessionStorage.setItem('searchFromBar', product.name)
   }
   isFocused.value = false
   // Товар открываем в новой вкладке
-  window.open(router.resolve(`/product/${id}`).href, '_blank')
+  window.open(router.resolve(`/product/${product.id}`).href, '_blank')
 }
 
 const goToCategory = (category: string) => {
-  if (query.value.trim()) {
-    addQuery(query.value.trim())
+  const trimmed = query.value.trim()
+  if (trimmed) {
+    addQuery(trimmed)
+    // Сохраняем поисковый запрос для каталога
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('searchFromBar', trimmed)
+    }
   }
   isFocused.value = false
-  // Категрию открываем в этой же вкладке
   router.push(`/catalog?category=${encodeURIComponent(category)}`)
 }
+
 
 const categorySuggestions = computed<string[]>(() => {
   const q = query.value.trim().toLowerCase()
@@ -158,7 +164,7 @@ const onBlur = () => {
             v-for="p in productSuggestions"
             :key="p.id"
             class="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors"
-            @mousedown.prevent="goToProduct(p.id)"
+            @mousedown.prevent="goToProduct(p)"
           >
             <img
               :src="p.image"

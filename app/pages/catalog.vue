@@ -84,6 +84,14 @@ const loadMore = () => {
 let observer: IntersectionObserver | null = null
 
 onMounted(() => {
+  // Читаем поисковый запрос из SearchBar, если он был сохранён
+  const savedSearch = sessionStorage.getItem('searchFromBar')
+  if (savedSearch) {
+    searchQuery.value = savedSearch
+    sessionStorage.removeItem('searchFromBar')
+    syncUrl()
+  }
+
   if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
     observer = new IntersectionObserver((entries) => {
       if (entries[0]?.isIntersecting && hasMore.value) {
